@@ -32,15 +32,19 @@ def show_graph(lang_count):
 
 	series =Series(tot, index= index)
 	series.sort()
-	Series.plot(series, kind='bar')
+	Series.plot(series, kind='bar', 
+		title='Coursera most referred programming languages.'
+		)
 
+	plt.xlabel('languages')
+	plt.ylabel('count')
 	plt.show()
 
 
 def main():
 	lang_count = count()
 
-	for l in lang_count: print l, len(lang_count[l])
+	# for l in lang_count: print l, len(lang_count[l])
 
 	show_graph(
 		[(l, len(lang_count[l])) for l in lang_count ]
